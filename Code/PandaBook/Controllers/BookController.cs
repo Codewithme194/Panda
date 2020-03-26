@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PandaBook.Controllers;
 
 namespace PandaBook.Controllers
 {
@@ -24,7 +25,7 @@ namespace PandaBook.Controllers
             BookModel bookmodel = new BookModel();
             bookmodel.BookName = "Harry Potter";
             bookmodel.DatePublished = DateTime.Now;
-            bookmodel.Genere = "Fantasy";
+            bookmodel.GenereId = 2;
             bookmodel.Author = "asd";
             bookmodel.ISBN = "5ewd324d";
             bookmodel.ShortDescription = "Harry Harry Harry";
@@ -45,14 +46,16 @@ namespace PandaBook.Controllers
         public string BookName { get; set; }
         public DateTime DatePublished { get; set; }
 
-        public string Genere { get; set; }
+        public int GenereId { get; set; }
 
         public string Author { get; set; }
 
         public string ISBN { get; set; }
 
         public string ShortDescription { get; set; }
-    }
+
+       
+        }
 
     }
 

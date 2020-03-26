@@ -9,9 +9,13 @@ namespace PandaBook.Controllers
     public class BookController : Controller
     {
         // GET: Bookhome
-        public string Index()
+        public ViewResult Index()
         {
-            return "book index";
+            
+            ViewBag.Title = "The shop";
+            ViewBag.WelcomeMessage = "Welcome to the shop. Kindly spend all your money!";
+            return View();
+
         }
 
 

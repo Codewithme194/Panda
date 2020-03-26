@@ -10,9 +10,12 @@ namespace PandaBook.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return redirectBook();
         }
-
+        public RedirectResult redirectBook()
+        {
+            return RedirectPermanent("~/Book/index");
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

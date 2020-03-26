@@ -12,20 +12,49 @@ namespace PandaBook.Controllers
         public ViewResult Index()
         {
             
-            ViewBag.Title = "The shop";
+            ViewBag.Title = "Book Recomending website";
             ViewBag.WelcomeMessage = "Welcome to the shop. Kindly spend all your money!";
             return View();
 
         }
 
 
-        public string Product(int id)
+        public string Book(int id)
         {
-            return "Product: Id = " + id.ToString();
+            BookModel bookmodel = new BookModel();
+            bookmodel.BookName = "Harry Potter";
+            bookmodel.DatePublished = DateTime.Now;
+            bookmodel.Genere = "Fantasy";
+            bookmodel.Author = "asd";
+            bookmodel.ISBN = "5ewd324d";
+            bookmodel.ShortDescription = "Harry Harry Harry";
+
+            return "Book: Id = " + id.ToString();
         }
+
+        public RedirectResult Redirectbook()
+        {
+            return RedirectPermanent("~/Book/index");
+        }
+
+
+
+        public class BookModel
+    {
+        public int BookId { get; set; }
+        public string BookName { get; set; }
+        public DateTime DatePublished { get; set; }
+
+        public string Genere { get; set; }
+
+        public string Author { get; set; }
+
+        public string ISBN { get; set; }
+
+        public string ShortDescription { get; set; }
     }
 
-   
+    }
 
 
 }
